@@ -22,7 +22,11 @@ User data: `Use file jenkins_user_data_script.sh`
 2. Navitage to jenkins dashboard and then install few plugins `AWS Credentials`, `Pipeline: AWS Steps`, `Pipeline: Stage View`, `Terraform`
 3. Create Jenkins Global Credentials Kind: `AWS Credentials`, Name: `aws-creds`, Access Key ID & Secret Access Key: `FROM_YOUR_IAM_USER`
 4. Navitage to Tools > Terraform installations > Add Terraform > Name: `terrfaorm`, Install dicrectory: `/usr/bin/terraform` (from `whereis terraform` command)
-5. Navitage to Dashboard > New Item > Create `Infra-job` Type `Pipeline` > Pipeline script: `Use file jenkins_init_terraform`
+5. Navitage to Dashboard > New Item > Create `Infra-job` Type `Pipeline` > Pipeline SCM: `Jenkins/infra-pipeline/Jenkinsfile`
+
+# Provisioning EKS (2 Worker Node, 1 Jump Server) using Terrform
+1. Create S3 Bucket, DynamoDB on AWS Console
+2. Run Infra-job Plan, Apply
 
 # CI/CD using Jenkins and Argo CD
 
